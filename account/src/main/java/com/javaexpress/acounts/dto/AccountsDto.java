@@ -1,6 +1,7 @@
 package com.javaexpress.acounts.dto;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class AccountsDto {

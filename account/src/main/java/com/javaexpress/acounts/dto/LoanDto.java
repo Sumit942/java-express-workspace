@@ -1,4 +1,4 @@
-package com.javaexpress.acounts.clients;
+package com.javaexpress.acounts.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

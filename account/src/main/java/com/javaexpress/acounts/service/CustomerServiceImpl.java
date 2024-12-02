@@ -2,7 +2,6 @@ package com.javaexpress.acounts.service;
 
 
 import com.javaexpress.acounts.clients.CartFeignClient;
-import com.javaexpress.acounts.clients.LoanDto;
 import com.javaexpress.acounts.clients.LoansFeignClient;
 import com.javaexpress.acounts.dto.AccountsDto;
 import com.javaexpress.acounts.dto.CardsDto;
@@ -40,7 +39,7 @@ public class CustomerServiceImpl implements ICustomerService {
                 () -> new ResourceNotFoundException("Account not found by customerId: " + customer.getCustomerId()));
 
         CardsDto cardsDto = cartFeignClient.fetchCardDetails(mobileNumber);
-        LoanDto loanDto = loansFeignClient.fetchLoan(mobileNumber);
+        AccountsDto.LoanDto loanDto = loansFeignClient.fetchLoan(mobileNumber);
 
         CustomerDetailsDto customerDetailsDto = new CustomerDetailsDto();
         BeanUtils.copyProperties(customer, customerDetailsDto);
