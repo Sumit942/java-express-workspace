@@ -1,2 +1,12 @@
-package com.javaexpress.acounts.clients;public interface LoansFeignClient {
+package com.javaexpress.acounts.clients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@FeignClient("LOAN")
+public interface LoansFeignClient {
+
+    @GetMapping("api/fetch")
+    public LoanDto fetchLoan(@RequestParam String mobileNumber);
 }

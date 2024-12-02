@@ -44,6 +44,7 @@ public class ICardServiceImpl implements ICardService {
                 .orElseThrow(() -> new CardAlreadyExistException("Card doesn't exist with given mobileNo: " + mobileNumber));
         CardsDto cardsDto = new CardsDto();
         BeanUtils.copyProperties(dbCardInfo, cardsDto);
+        System.out.println("fetch via port: 9004");
         return cardsDto;
     }
 

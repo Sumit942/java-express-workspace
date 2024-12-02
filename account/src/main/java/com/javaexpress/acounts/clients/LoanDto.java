@@ -1,4 +1,4 @@
-package com.javaexpress.loans.dto;
+package com.javaexpress.acounts.clients;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

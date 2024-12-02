@@ -1,4 +1,4 @@
-package com.javaexpress.carts.dto;
+package com.javaexpress.acounts.dto;
 
 import lombok.Data;
 
