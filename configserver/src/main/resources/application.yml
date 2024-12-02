@@ -1,0 +1,20 @@
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+server:
+    port: 9001
+spring:
+    application:
+        name: configserver
+    cloud:
+        config:
+            server:
+                git:
+                    default-label: master
+                    force-pull: true
+                    timeout: 100
+                    uri: https://github.com/Sumit942/java-express-workspace.git
+    profiles:
+        active: git
