@@ -1,1 +1,5 @@
 /.idea/
+*/.mvn
+*/.mvn/*
+*mvnw
+*.cmd

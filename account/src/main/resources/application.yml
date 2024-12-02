@@ -1,0 +1,44 @@
+spring:
+    application:
+        name: account
+    datasource:
+        username: sa
+        url: jdbc:h2:mem:testdb
+        password:
+    jpa:
+        hibernate:
+            ddl-auto: update
+    h2:
+        console:
+            enabled: true
+    config:
+        import: "configserver:http://localhost:9001/"
+    profiles:
+        active: "prod"
+#logging:
+#    level:
+#        org.springframework: DEBUG
+#        your.package.name: DEBUG
+server:
+    port: 9003
+    
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+    info:
+        env:
+            enabled: true
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://localhost:9002/eureka/
+
+info:
+    app:
+        name: "account-client"
+        description: "Java Eureka Client for account microservice"
+        version: "1.0.0"
